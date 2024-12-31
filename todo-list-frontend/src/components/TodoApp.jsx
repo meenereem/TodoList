@@ -46,10 +46,13 @@ const TodoApp = () => {
 
     const handleDeleteTodo = (id) => {
         dispatch(deleteTodo(id));
-        if ((filteredTodos.length-1) % todosPerPage === 0) {
+        const totalPages = Math.ceil(filteredTodos.length / todosPerPage);
+        if (currentPage > totalPages && totalPages > 0) {
+            setCurrentPage(totalPages);
+        } else if ((filteredTodos.length - 1) % todosPerPage === 0 && currentPage > 1) {
             setCurrentPage(currentPage - 1);
         }
-    }
+    };
 
     const filteredTodos = todos.filter(todo => {
         if (filter === 'In Progress') {
@@ -128,7 +131,7 @@ const TodoApp = () => {
                 ))}
             </ul>
             <button onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
-            <button onClick={handleNextPage} disabled={currentPage === Math.ceil(filteredTodos.length/todosPerPage) }>Next</button>
+            <button onClick={handleNextPage} disabled={currentPage >= Math.ceil(filteredTodos.length/todosPerPage) }>Next</button>
             {status === 'Failed' && <p>...Failed to fetch todos</p>}
             {error && <p style={{color: 'red'}}>{error}</p>}
         </div>
