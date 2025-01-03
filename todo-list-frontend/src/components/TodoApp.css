@@ -22,16 +22,13 @@ body {
     margin-bottom: 20px;
   }
   
-  /* Input field styling */
   input[type="text"] {
     width: 70%;
     padding: 8px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
   
-  /* Button styling */
   button {
     padding: 8px 12px;
     margin: 5px;
