@@ -1,6 +1,6 @@
 # Project Structure
 
-This project is a full-stack Todo List application built with React.js for the frontend and Node.js with Express.js and MongoDB for the backend. The app allows users to create, view, edit, and delete tasks, with data persisted in a database. The application uses a [front end](https://github.com/meenereem/todo-list-frontend) and a [back end server](https://github.com/meenereem/todo-list-backend) to handle requests and responses.
+This project is a full-stack Todo List application built with React.js for the frontend and Node.js with Express.js and MongoDB for the backend. The app allows users to create, view, edit, and delete tasks, with data persisted in a database. The application uses a front end and a back end server to handle requests and responses.
 
 ```
 ├── todo-list-frontend/    # Frontend with React.js
